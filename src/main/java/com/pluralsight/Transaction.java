@@ -32,8 +32,6 @@ public class Transaction {
                 case "X":
                     System.out.println("Exiting Financial Tracker App. Goodbye!");
                     System.exit(0);
-                default:
-                    System.out.println("Invalid option. Please try again.");
             }
         }
     }
