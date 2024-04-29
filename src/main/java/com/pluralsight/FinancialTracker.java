@@ -87,6 +87,17 @@ public class FinancialTracker {
     }
 
     private static void addPayment(Scanner scanner) {
+        System.out.println("\nMake a Payment: ");
+        String date= "04/29/2024";
+        String time = "11:25AM";
+        String description = "Phone Bill";
+        String vendor = "T-Mobile";
+        double amount = -150.00;
+
+        saveTransaction(date, time, description, vendor, amount);
+        System.out.println("Your payment was made successfully!");
+
+
         // This method should prompt the user to enter the date, time, vendor, and amount of a payment.
         // The user should enter the date and time in the following format: yyyy-MM-dd HH:mm:ss
         // The amount should be a positive number.
