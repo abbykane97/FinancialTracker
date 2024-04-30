@@ -19,6 +19,9 @@ public class Transaction {
         this.amount = amount;
     }
 
+    public Transaction(String date, String time, String vendor, String type, double amount) {
+    }
+
     public LocalDate getDate() {
         return date;
     }
