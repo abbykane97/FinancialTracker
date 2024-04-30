@@ -1,39 +1,73 @@
 package com.pluralsight;
 
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 
 public class Transaction {
-    public static void main(String [] args) {
-        FinancialTracker financialTracker = new FinancialTracker();
-        Scanner scanner = new Scanner(System.in);
+    private LocalDate date;
+    private LocalTime time;
+    private String description;
+    private String vendor;
+    private double amount;
 
-        System.out.println("Welcome to Your Financial Tracker App !");
+    public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {
+        this.date = date;
+        this.time = time;
+        this.description = description;
+        this.vendor = vendor;
+        this.amount = amount;
+    }
 
-        while (true) {
-            System.out.println("\nHome Screen:");
-            System.out.println("D) Add Deposit");
-            System.out.println("P) Make a Payment (Debit)");
-            System.out.println("L) Ledger");
-            System.out.println("X) Exit");
+    public LocalDate getDate() {
+        return date;
+    }
 
-            System.out.print("Please select an option: ");
-            String choice = scanner.next().toUpperCase();
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 
-            switch (choice) {
-                case "D":
-                    financialTracker.addDeposit(scanner);
-                    break;
-                case "P":
-                    financialTracker.makePayment(scanner);
-                    break;
-                case "L":
-                    financialTracker.displayLedger();
-                    break;
-                case "X":
-                    System.out.println("Exiting Financial Tracker App. Goodbye!");
-                    System.exit(0);
-            }
-        }
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getVendor() {
+        return vendor;
+    }
+
+    public void setVendor(String vendor) {
+        this.vendor = vendor;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "date=" + date +
+                ", time=" + time +
+                ", description='" + description + '\'' +
+                ", vendor='" + vendor + '\'' +
+                ", amount=" + amount +
+                '}';
     }
 }
 

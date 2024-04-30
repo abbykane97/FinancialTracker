@@ -65,15 +65,6 @@ public class FinancialTracker {
     }
 
     static void addDeposit(Scanner scanner) {
-
-        System.out.println("\nAAdd Deposit:");
-        String date = "02/09/2024";
-        String time = "7:00 AM";
-        String description = "xxxx";
-        String vendor = "XXX";
-        double amount = 2700.00;
-
-        saveTransaction(date, time, description, vendor, amount);
         System.out.println("Deposit added successfully");
 
         // This method should prompt the user to enter the date, time, vendor, and amount of a deposit.
@@ -87,14 +78,7 @@ public class FinancialTracker {
     }
 
     private static void addPayment(Scanner scanner) {
-        System.out.println("\nMake a Payment: ");
-        String date= "04/29/2024";
-        String time = "11:25AM";
-        String description = "Phone Bill";
-        String vendor = "T-Mobile";
-        double amount = -150.00;
 
-        saveTransaction(date, time, description, vendor, amount);
         System.out.println("Your payment was made successfully!");
 
 
