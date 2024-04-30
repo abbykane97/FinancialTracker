@@ -7,7 +7,6 @@ import java.util.Date;
 
 
 public class Transaction {
-    public String type;
     private LocalDate date;
     private LocalTime time;
     private String description;
@@ -22,14 +21,9 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public Transaction(String date, String time, String vendor, String type, double amount) {
-    }
 
-    public Date getDate() {
-        // Implementation from https://www.baeldung.com/java-date-to-localdate-and-localdatetime
-        return java.util.Date.from(date.atStartOfDay()
-                .atZone(ZoneId.systemDefault())
-                .toInstant());
+    public LocalDate getDate() {
+        return date;
     }
 
     public void setDate(LocalDate date) {
