@@ -2,6 +2,8 @@ package com.pluralsight;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.util.Date;
 
 
 public class Transaction {
@@ -23,8 +25,11 @@ public class Transaction {
     public Transaction(String date, String time, String vendor, String type, double amount) {
     }
 
-    public LocalDate getDate() {
-        return date;
+    public Date getDate() {
+        // Implementation from https://www.baeldung.com/java-date-to-localdate-and-localdatetime
+        return java.util.Date.from(date.atStartOfDay()
+                .atZone(ZoneId.systemDefault())
+                .toInstant());
     }
 
     public void setDate(LocalDate date) {
