@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class FinancialTracker {
@@ -59,13 +60,13 @@ public class FinancialTracker {
     }
 
     public static void loadTransactions(String fileName) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))){
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
-            while ((line = reader.readLine()) !=null) {
+            while ((line = reader.readLine()) != null) {
                 String[] parts = line.split("//|");
                 if (parts.length == 5) {
-                    LocalDate date = LocalDate.parse(parts[0], DATE_FORMAT]
-                    LocalTime time = LocalTime.parse(parts[0], TIME_FORMAT]
+                    LocalDate date = LocalDate.parse(parts[0]);
+                    LocalTime time = LocalTime.parse(parts[1]);
                     String vendor = parts[2];
                     String type = parts[3];
                     double amount = Double.parseDouble(parts[4]);
@@ -190,18 +191,36 @@ public class FinancialTracker {
     }
 
     static void displayLedger() {
+        System.out.println("Ledger");
+        System.out.println(transactions);
         // This method should display a table of all transactions in the `transactions` ArrayList.
         // The table should have columns for date, time, vendor, type, and amount.
     }
 
     private static void displayDeposits() {
+        System.out.println("Date\nTime\nVendor\nAmount");
+        System.out.println("xxxxxxxxxxxxxxxxxx");
+
+        for (Transaction transaction : transactions) {
+            if (transaction.type.equalsIgnoreCase("Deposit")) {
+            }
+        }
+
         // This method should display a table of all deposits in the `transactions` ArrayList.
         // The table should have columns for date, time, vendor, and amount.
     }
 
     private static void displayPayments() {
-        // This method should display a table of all payments in the `transactions` ArrayList.
-        // The table should have columns for date, time, vendor, and amount.
+        System.out.println("Date\nTime\nVendor\nAmount");
+        System.out.println("xxxxxxxxxxxxxxxxxx");
+
+        for (Transaction transaction : transactions) {
+            if (transaction.type.equalsIgnoreCase("Payments")) {
+
+                // This method should display a table of all payments in the `transactions` ArrayList.
+                // The table should have columns for date, time, vendor, and amount.
+            }
+        }
     }
 
     private static void reportsMenu(Scanner scanner) {
@@ -265,23 +284,15 @@ public class FinancialTracker {
 }
 
 
-
-        // This method should prompt the user to enter the date, time, vendor, and amount of a payment.
-        // The user should enter the date and time in the following format: yyyy-MM-dd HH:mm:ss
-        // The amount should be a positive number.
-        // After validating the input, a new `Payment` object should be created with the entered values.
-        // The new payment should be added to the `transactions` ArrayList.
-
+            // This method should prompt the user to enter the date, time, vendor, and amount of a payment.
+            // The user should enter the date and time in the following format: yyyy-MM-dd HH:mm:ss
+            // The amount should be a positive number.
+            // After validating the input, a new `Payment` object should be created with the entered values.
+            // The new payment should be added to the `transactions` ArrayList.
 
 
-
-
-
-        // This method should prompt the user to enter the date, time, vendor, and amount of a deposit.
-        // The user should enter the date and time in the following format: yyyy-MM-dd HH:mm:ss
-        // The amount should be a positive number.
-        // After validating the input, a new `Deposit` object should be created with the entered values.
-        // The new deposit should be added to the `transactions` ArrayList.
-
-
-
+            // This method should prompt the user to enter the date, time, vendor, and amount of a deposit.
+            // The user should enter the date and time in the following format: yyyy-MM-dd HH:mm:ss
+            // The amount should be a positive number.
+            // After validating the input, a new `Deposit` object should be created with the entered values.
+            // The new deposit should be added to the `transactions` ArrayList.

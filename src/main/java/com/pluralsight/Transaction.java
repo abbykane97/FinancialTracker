@@ -5,6 +5,7 @@ import java.time.LocalTime;
 
 
 public class Transaction {
+    public String type;
     private LocalDate date;
     private LocalTime time;
     private String description;
