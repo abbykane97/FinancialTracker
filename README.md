@@ -2,11 +2,16 @@
 
 ## Description of the Project
 
+In this project I will be creating an application that can track all financial transactions either for a business or for personal use.
+
 Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
 
 ![Class Diagram](path/to/your/class_diagram.png)
 
 ## User Stories
+
+As a user, I want to be able to access all my transactions in one place, so that I can keep all my finances organized.
+As a user, I want to be able to filter through all my transactions by date or vendor, so it is easier for me to find the information I'm looking for.
 
 List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
 
@@ -15,9 +20,14 @@ List the user stories that guided the development of your application. Format th
 
 ## Setup
 
+First you will want to create two classes.
+
 Instructions on how to set up and run the project using IntelliJ IDEA.
 
 ### Prerequisites
+
+Ensure you have IntelliJ IDEA installed, which you can download [here](https://www.jetbrains.com/idea/download/).
+Make sure you have Java SDK 17 installed and configured in intelliJ.
 
 - IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
 - Java SDK: Make sure Java SDK is installed and configured in IntelliJ.
@@ -33,6 +43,10 @@ Follow these steps to get your application running within IntelliJ IDEA:
 5. Right-click on the file and select 'Run 'YourMainClassName.main()'' to start the application.
 
 ## Technologies Used
+I am using:
+openjdk 17.0.10 2024-01-16 LTS
+OpenJDK Runtime Environment Corretto-17.0.10.7.1 (build 17.0.10+7-LTS)
+OpenJDK 64-Bit Server VM Corretto-17.0.10.7.1 (build 17.0.10+7-LTS, mixed mode, sharing)
 
 - Java: Mention the version you are using.
 - Any additional libraries or frameworks used in the project.
