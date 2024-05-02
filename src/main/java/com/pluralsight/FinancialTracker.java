@@ -339,7 +339,7 @@ public class FinancialTracker {
 
         for (Transaction transaction : transactions) {
             if (transaction.getVendor().equalsIgnoreCase(vendor)) {
-                System.out.println(transaction); 
+                System.out.println(transaction);
                 foundTransactions = true;
             }
         }

@@ -53,7 +53,10 @@ OpenJDK 64-Bit Server VM Corretto-17.0.10.7.1 (build 17.0.10+7-LTS, mixed mode, 
 
 ## Demo
 
+
 Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
+
+[Screen Recording 2024-05-02 at 11.16.39 AM.mov](..%2F..%2FScreen%20Recording%202024-05-02%20at%2011.16.39%E2%80%AFAM.mov)
 
 ![Application Screenshot](path/to/your/screenshot.png)
 
@@ -72,6 +75,8 @@ List resources such as tutorials, articles, or documentation that helped you dur
 - [Effective Java](https://www.example.com)
 
 ## Team Members
+**Brya Woods** - Helped clean up the codes.
+**Ben Bergman** - Help find the resources for codes onliine.
 
 - **Name 1** - Specific contributions or roles.
 - **Name 2** - Specific contributions or roles.
@@ -80,5 +85,6 @@ List resources such as tutorials, articles, or documentation that helped you dur
 
 Express gratitude towards those who provided help, guidance, or resources:
 
+Thank you Raymond for your patience, leadership and experience!
 - Thank you to [Mentor's Name] for continuous support and guidance.
 - A special thanks to all teammates for their dedication and teamwork.
