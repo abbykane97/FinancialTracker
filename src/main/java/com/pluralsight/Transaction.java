@@ -9,8 +9,8 @@ import java.util.Date;
 public class Transaction {
     private LocalDate date;
     private LocalTime time;
-    private String description;
     private String vendor;
+    private String description;
     private double amount;
 
     public Transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {

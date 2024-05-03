@@ -70,8 +70,8 @@ public class FinancialTracker {
                 if (parts.length == 5) {
                     LocalDate date = LocalDate.parse(parts[0], DATE_FORMATTER);
                     LocalTime time = LocalTime.parse(parts[1], TIME_FORMATTER);
-                    String vendor = parts[2];
-                    String description = parts[3];
+                    String description = parts[2];
+                    String vendor = parts[3];
                     double amount = Double.parseDouble(parts[4]);
                     transactions.add(new Transaction(date, time, description, vendor,amount));
                 } else {
@@ -107,7 +107,7 @@ public class FinancialTracker {
             System.out.println("Enter the amount:");
             try {
                 amount = Double.parseDouble(scanner.nextLine());
-                if (amount <= 0) {
+                if (amount < 0) {
                     System.out.println("Amount must be a positive number.");
                 } else {
                     break;
@@ -121,9 +121,9 @@ public class FinancialTracker {
         transactions.add(deposit);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("transactions.csv", true))){
-            for (Transaction transaction : transactions) {
-                String formattedTransaction = String.format("%s|%s|%s|%s|%.2f\n",transaction.getDate(),transaction.getTime(),
-                        transaction.getDescription(),transaction.getVendor(),transaction.getAmount());
+             {
+                String formattedTransaction = String.format("%s|%s|%s|%s|%.2f\n",deposit.getDate(),deposit.getTime(),
+                        deposit.getDescription(),deposit.getVendor(),deposit.getAmount());
                 writer.write(formattedTransaction);
                 writer.newLine();
             }
@@ -157,7 +157,7 @@ public class FinancialTracker {
             System.out.println("Enter the amount:");
             try {
                 amount = Double.parseDouble(scanner.nextLine());
-                if (amount <= 0) {
+                if (amount < 0) {
                     System.out.println("Amount must be a positive number");
                 } else {
                     break;
@@ -166,14 +166,15 @@ public class FinancialTracker {
                 System.out.println("Invalid . Please enter a number");
             }
         }
+        Transaction payment = new Transaction(date, time, description,vendor,-amount);
 
-        transactions.add(new Transaction(date, time, vendor, description, amount * -1)); // Negative amount for payments
+        transactions.add(payment); // Negative amount for payments
         System.out.println("Your payment was added successfully!");
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("transactions.csv", true))){
-            for (Transaction transaction : transactions) {
-                String formattedTransaction = String.format("%s|%s|%s|%s|%.2f\n",transaction.getDate(),transaction.getTime(),
-                        transaction.getDescription(),transaction.getVendor(),transaction.getAmount());
+             {
+                String formattedTransaction = String.format("%s|%s|%s|%s|%.2f\n",payment.getDate(),payment.getTime(),
+                        payment.getDescription(),payment.getVendor(),payment.getAmount());
                 writer.write(formattedTransaction);
                 writer.newLine();
             }
@@ -212,6 +213,7 @@ public class FinancialTracker {
                     break;
                 case "H":
                     running = false;
+                    break;
                 default:
                     System.out.println("Invalid option");
                     break;
@@ -289,6 +291,7 @@ public class FinancialTracker {
                     currentDate = LocalDate.now();
                     LocalDate startCurrentYear = currentDate.withDayOfYear(1);
                     filterTransactionsByDate( startCurrentYear, currentDate);
+                    break;
 
                 case "4":
                     previousDate = LocalDate.now().minusYears(1);
@@ -300,10 +303,12 @@ public class FinancialTracker {
                 case "5":
                     System.out.println("Enter the vendor:");
                     String vendor = scanner.nextLine();
-                    filterTransactionsByVendor(vendor);
+                    printTransactionsByVendor(transactions,vendor);
+                    break;
 
                 case "0":
                     running = false;
+                    break;
                 default:
                     System.out.println("Invalid option");
                     break;
@@ -327,12 +332,10 @@ public class FinancialTracker {
         if (!foundTransactions) {
             System.out.println("No transactions found between " + startDate + " and " + endDate + ".");
         }
+
     }
 
-    private static void filterTransactionsByVendor(String vendor) {
-    }
-
-    public void printTransactionsByVendor(List<Transaction> transactions, String vendor) {
+    private static void printTransactionsByVendor(List<Transaction> transactions, String vendor) {
         boolean foundTransactions = false;
 
         System.out.println("Transactions for vendor: " + vendor);

@@ -43,7 +43,6 @@ Right-click on the main class file and select "Run <class-name>" from the contex
 Alternatively, you can use the green "Run" button in the toolbar at the top of the IntelliJ IDEA window.
 
 View Output: If your project produces any output (e.g., print statements), you can view it in the "Run" or "Debug" tool window at the bottom of the IntelliJ IDEA window.
-Debugging (optional): If you encounter any issues with your code, you can use IntelliJ IDEA's debugging features to troubleshoot and fix them. You can set breakpoints, inspect variables, and step through your code line by line.
 
 
 Instructions on how to set up and run the project using IntelliJ IDEA.
@@ -80,9 +79,8 @@ OpenJDK 64-Bit Server VM Corretto-17.0.10.7.1 (build 17.0.10+7-LTS, mixed mode, 
 
 Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
 
-[Screen Recording 2024-05-02 at 11.16.39 AM.mov](..%2F..%2FScreen%20Recording%202024-05-02%20at%2011.16.39%E2%80%AFAM.mov)
+![Screen Recording 2024-05-02 at 11.16.39 AM.mov](..%2F..%2FScreen%20Recording%202024-05-02%20at%2011.16.39%E2%80%AFAM.mov)
 
-![Application Screenshot](path/to/your/screenshot.png)
 
 ## Future Work
 
